@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/queries-left-right-circular-shift-array/
