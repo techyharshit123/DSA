@@ -109,6 +109,30 @@ node* SwapNodePairwiseIII(node *head)
 
 }
 
+////////////////////////////////////////*****METHOD-IV*****///////////////////////////////////////
+//recursive solution
+node* pairWiseSwap(node* head)
+{
+    // Base Case: The list is empty or has only one node
+    if (head == NULL || head->next == NULL)
+        return head;
+ 
+    // Store head of list after two nodes
+    node* remaing = head->next->next;
+ 
+    // Change head
+    node* newhead = head->next;
+ 
+    // Change next of second node
+    head->next->next = head;
+ 
+    // Recur for remaining list and change next of head
+    head->next = pairWiseSwap(remaing);
+ 
+    // Return new head of modified list
+    return newhead;
+}
+
 void printList(node *head)
 {
 	while(head!=NULL)
@@ -129,7 +153,7 @@ int main()
 	insertAtHead(head,-1);
 	insertAtHead(head,-2);
 	printList(head);
-	node *now=SwapNodePairwiseIII(head);
+	node *now=pairWiseSwap(head);
 	printList(now);
 
 }
