@@ -1,5 +1,5 @@
 //Harshit
- 
+// In this problem simply swap two nodes
 #include "bits/stdc++.h"
 using namespace std;
 
@@ -32,7 +32,7 @@ void insertAtHead(node *&head,int d)
 }
 
 ////////////////////////////////////////*****METHOD-I*****///////////////////////////////////////
-void swapNodes(node *&head, int x,int y)
+void swapNodesI(node *&head, int x,int y)
 {
 	if(x==y)
 		return;
@@ -79,6 +79,42 @@ void swapNodes(node *&head, int x,int y)
 	return;
 }
 
+////////////////////////////////////////*****METHOD-II*****///////////////////////////////////////
+//Optimized code ----->  search x and y in single traversal
+void swapNodesII(node *&head, int x,int y)
+{
+	if(x==y)
+		return;
+
+	//search for x
+	node *a = NULL, *b = NULL;
+ 
+    // search for x and y in the linked list
+    // and store therir pointer in a and b
+    while (head) {
+ 
+        if ((head)->data == x) {
+            a = head;
+        }
+ 
+        else if ((head)->data == y) {
+            b = head;
+        }
+ 
+        head = ((head)->next);
+    }
+ 
+    // if we have found both a and b
+    // in the linked list swap current
+    // pointer and next pointer of these
+    if (a && b) {
+ 
+        swap(*a, *b);
+        swap(((a)->next), ((b)->next));
+    }
+	return;
+}
+
 void printList(node *head)
 {
 	while(head!=NULL)
@@ -102,7 +138,7 @@ int main()
 	insertAtHead(head,2);
 	printList(head);
 
-	swapNodes(head,11,5);
+	swapNodesI(head,11,5);
 
 	printList(head);
 
