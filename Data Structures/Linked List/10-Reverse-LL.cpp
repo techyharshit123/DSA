@@ -73,10 +73,7 @@ node* reversefun(node *curr,node *prev)
 
 	node *next=curr->next;
 	curr->next=prev;
-	prev=curr;
-	curr=next;
-	return reversefun(curr,prev);
-	// prev=curr;
+	return reversefun(next,curr);
 }
 node* reverseListRecurrII(node *head)
 {
@@ -106,6 +103,6 @@ int main()
 	insertAtHead(head,1);
 	printList(head);
 
-	node *ans=reverseListRecurrII(head);
+	node *ans=reverseList(head);
 	printList(ans);
 }
