@@ -101,6 +101,8 @@ node* sortedMergeRecur(node* head1, node* head2)
     // code here
 }
 
+
+//TC=O(n)  and  SC=O(1)
 void printList(node *head)
 {
 	while(head!=NULL)
