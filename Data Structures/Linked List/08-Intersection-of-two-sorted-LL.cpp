@@ -60,7 +60,7 @@ Node* findIntersection(Node* head1, Node* head2)
     return list;
     // Your Code Here
 }
-
+//TC=O(m+n)   and    SC=O(min(m,n))
 ///////////////////////////////////***********METHOD-II*************/////////////////////////////
 Node* findIntersectionRecursive(Node* head1, Node* head2)
 {
@@ -81,6 +81,8 @@ Node* findIntersectionRecursive(Node* head1, Node* head2)
     temp->next=findIntersection(head1->next,head2->next);
     return temp;
 }
+//TC=O(m+n)   and    SC=O(max(m,n))
+
 void printList(Node *head)
 {
     while(head!=NULL)
