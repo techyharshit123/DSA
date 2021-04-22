@@ -8,7 +8,8 @@ public:
 	int *arr;
 	int sz;
 	int top;
-
+	
+	//constructor
 	Stack(int s)
 	{
 		sz=s;
