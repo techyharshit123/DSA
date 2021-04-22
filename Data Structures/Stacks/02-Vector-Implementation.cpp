@@ -55,7 +55,7 @@ int main()
 	s.push(10);
 	s.push(100);
 	s.push(1000);
-	s.push(10000); //at this stage we'll get MEMORY OVERFLOW in output
+	s.push(10000);
 	cout<<s.peek()<<endl;
 	s.pop();
 	cout<<s.peek()<<endl;
