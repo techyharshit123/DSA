@@ -14,41 +14,35 @@ public:
 
 	int pop()
 	{
-		if(top==-1)
+		if(v.empty())
 		{
-			cout<<"MEMORY UNDERFLOW";
+			cout<<"MEMORY UNDERFLOW"<<endl;
 			return 0;
 		}
-
 		int res=v.back();
 		v.pop_back();
-		top--;
 		return res;
 	}
 
 	int peek()
 	{
-		if(top==-1)
+		if(v.empty())
 		{
-			cout<<"MEMORY UNDERFLOW";
+			cout<<"MEMORY UNDERFLOW"<<endl;
 			return 0;
 		}
-
 		int res=v.back();
 		return res;
 	}
 
 	int size()
 	{
-		return (top+1);
+		return v.size();
 	}
 
 	bool isEmpty()
 	{
-		if(top==-1)
-			return 1;
-		else
-			return 0;
+		return v.empty();
 	}
 };
 
