@@ -5,82 +5,83 @@ using namespace std;
 
 ///////////////////////////////***************SIMPLE IMPLEMENTATION*************///////////////////////////
 //deque takes O(n) time
-// class Queue
-// {
-// public:
-// 	int *a;
-// 	int curr_size;
-// 	int capacity;
+class Queue
+{
+public:
+	int *a;
+	int curr_size;
+	int capacity;
 
-// 	Queue(int n)
-// 	{
-// 		capacity=n;
-// 		curr_size=0;
-// 		a=new int[capacity];
-// 	}
+	Queue(int n)
+	{
+		capacity=n;
+		curr_size=0;
+		a=new int[capacity];
+	}
 
-// 	bool isFull()
-// 	{
-// 		return curr_size==capacity;
-// 	}
-// 	bool isEmpty()
-// 	{
-// 		return curr_size==0;
-// 	}
-// 	void enque(int x)
-// 	{
-// 		if(curr_size==capacity)
-// 		{
-// 			cout<<"MEMORY OVERFLOW";
-// 			return;
-// 		}
-// 		a[curr_size]=x;
-// 		curr_size++;
-// 	}
-// 	void deque()
-// 	{
-// 		if(curr_size==0)
-// 		{
-// 			cout<<"MEMORY UNDERFLOW";
-// 			return;
-// 		}
+	bool isFull()
+	{
+		return curr_size==capacity;
+	}
+	bool isEmpty()
+	{
+		return curr_size==0;
+	}
+	void enque(int x)
+	{
+		if(curr_size==capacity)
+		{
+			cout<<"MEMORY OVERFLOW";
+			return;
+		}
+		a[curr_size]=x;
+		curr_size++;
+	}
+	void deque()
+	{
+		if(curr_size==0)
+		{
+			cout<<"MEMORY UNDERFLOW";
+			return;
+		}
 
-// 		//remove element from starting 
-// 		for(int i=0;i<curr_size-1;i++)
-// 			a[i]=a[i+1];
-// 		curr_size-1;
-// 	}
-// 	int getFront()
-// 	{
-// 		if(isEmpty())
-// 		{
-// 			cout<<"MEMORY UNDERFLOW";
-// 			return INT_MIN;
-// 		}
-// 		else
-// 		{
-// 			return a[0]; 
-// 		}
-// 	}
-// 	int getRear()
-// 	{
-// 		if(isEmpty())
-// 		{
-// 			cout<<"MEMORY UNDERFLOW";
-// 			return INT_MIN;
-// 		}
-// 		else
-// 		{
-// 			return a[curr_size-1]; 
-// 		}
-// 	}
-// };
+		//remove element from starting 
+		for(int i=0;i<curr_size-1;i++)
+			a[i]=a[i+1];
+		curr_size-1;
+	}
+	int getFront()
+	{
+		if(isEmpty())
+		{
+			cout<<"MEMORY UNDERFLOW";
+			return INT_MIN;
+		}
+		else
+		{
+			return a[0]; 
+		}
+	}
+	int getRear()
+	{
+		if(isEmpty())
+		{
+			cout<<"MEMORY UNDERFLOW";
+			return INT_MIN;
+		}
+		else
+		{
+			return a[curr_size-1]; 
+		}
+	}
+};
 
 
 
 ///////////////////////////////***************EFFICIENT IMPLEMENTATION*************///////////////////////////
 											//////CIRCULAR ARRAY/////
-//deque takes O(1) time
+//deque takes O(1) time for all operation
+//Do not waste space in the array memory, if space is present in array then the item will bw inserted into the queue
 class Queue
 {
 public:
