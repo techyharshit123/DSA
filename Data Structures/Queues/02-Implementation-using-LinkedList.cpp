@@ -50,6 +50,7 @@ public:
 		Node* temp=front;
 		front=front->next;
 		delete(temp);
+		// If the node we deleted was the last node
 		if(front==NULL)  //in case of deletion of last node we'll change the rear also to NULL otherwise the rear remains unchanged
 			rear=NULL;
 	}
@@ -98,8 +99,6 @@ int main()
     // q.enque(7);
     // q.enque(8);//show memory overflow 
     q.deque();
-    q.deque();
-    q.display();
     q.deque();
     q.display();
     q.deque();
