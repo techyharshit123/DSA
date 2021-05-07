@@ -78,14 +78,36 @@ int count(node*root){
     return 1 + count(root->left) + count(root->right);
 }
 
+//Print kth level
+void printKthLevel(node*root,int k){
+    if(root==NULL){
+        return;
+    }
+    if(k==0){
+        cout<<root->data<<" ";
+        return;
+    }
+    printKthLevel(root->left,k-1);
+    printKthLevel(root->right,k-1);
+    return; 
+
+}
+
 int main(){ 
     node* root = buildTree();
+    /*
     print(root);
     cout<<endl;
 
     printIn(root);
     cout<<endl;
     printPost(root);
+    cout<<endl;
+    cout<<height(root)<<endl;
+    */
+    printKthLevel(root,3);
+    // printAllLevels(root);
+    cout<<count(root)<<endl;
 
 
 return 0;
