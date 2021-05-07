@@ -57,6 +57,27 @@ void printPost(node*root){
     printPost(root->right);
     cout<<root->data<<" ";
 }
+
+
+//Height of tree
+int height(node*root){
+    if(root==NULL){
+        return 0;
+    }
+    int ls = height(root->left);
+    int rs = height(root->right);
+    return max(ls,rs) + 1;
+
+}
+
+//Count no. of nodes
+int count(node*root){
+    if(root==NULL){
+        return 0;
+    }
+    return 1 + count(root->left) + count(root->right);
+}
+
 int main(){ 
     node* root = buildTree();
     print(root);
