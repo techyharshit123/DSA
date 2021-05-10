@@ -1,5 +1,5 @@
 //Harshit
- 
+ // https://www.geeksforgeeks.org/level-order-traversal-in-spiral-form/
 #include "bits/stdc++.h"
 using namespace std;
 
@@ -163,7 +163,7 @@ vector<int> findSpiral(node *root)
 }
 
 ///////////***************METHOD-2*****************/////////////////////
-// Using one queue and one stack
+// Using one queue and one stack (Stack for reversing the intended line)
 // BUT IN THSI CASE SOME OF THE ITEMS ARE PROCESSED 4 TIMES
 
 
