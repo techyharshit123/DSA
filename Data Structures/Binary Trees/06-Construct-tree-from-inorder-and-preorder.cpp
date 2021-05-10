@@ -16,6 +16,9 @@ class node{
         }
 };
 
+//////////////////////////***********METHOD-1*****************//////////////////
+// TC=O(n^2) and SC=O(n);
+
 int preIndex=0;
 node* build(int in[],int pre[],int is,int ie)
 {
@@ -40,6 +43,14 @@ node* build(int in[],int pre[],int is,int ie)
 
 	return root;
 }
+
+////////////////////********************MRTHOD-2**********************///////////////////
+//Using Hashmap
+//Store the key and value pair of all the elements of the inorder array with array element as the key of map and index as the value;
+
+
+
+//Printing the tree in Post Order manner
 void printPostOrder(node* root)
 {
 	if(root==NULL)
