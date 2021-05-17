@@ -98,7 +98,8 @@ node* deleteNode(node* root,int key)
 //////////////////////////////////////////***************METHOD-2*****************////////////////////////////////////////////
 
 /////////To optimise the code we can simply keep an pointer to previous of successor node so that we need not traverse the tree again for deleting the successor node
-
+//
+//In the above recursive code, we recursively call delete() for the successor. We can avoid recursive calls by keeping track of the parent node of the successor so that we can simply remove the successor by making the child of a parent NULL. We know that the successor would always be a leaf node.
 node* deleteNodeOptimised(node* root,int key)
 {
 	if(root==NULL)
