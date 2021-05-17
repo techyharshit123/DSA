@@ -18,6 +18,7 @@ public:
 };
 
 
+// Insert in BST
 node* insert(node* root, int key)
 {
 	if(root==NULL)
@@ -39,6 +40,23 @@ node* insert(node* root, int key)
 	return root;
 }
 
+// search for an item in BST
+bool isPresent(node* root, int key)
+{
+	if(root==NULL)
+		return false;
+
+	if(root->data==key)
+		return true;
+
+	if(key<root->data)
+	{
+		return isPresent(root->left,key);
+	}
+	else
+		return isPresent(root->right,key);
+
+}
 void printBSTinorder(node * root)
 {
 	if(root==NULL)
@@ -61,5 +79,12 @@ int main()
 	}
 
 	printBSTinorder(root);
+
+	cout<<endl;
+
+	int ok=isPresent(root,15)?1:0;
+
+	cout<<ok<<endl;
+
 
 }
