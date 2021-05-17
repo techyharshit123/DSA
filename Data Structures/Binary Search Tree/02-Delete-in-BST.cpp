@@ -51,6 +51,8 @@ node* getInorderSuccessor(node* root)
 
 	return curr;
 }
+
+//The worst case time complexity of delete operation is O(h) where h is the height of the Binary Search Tree. In worst case, we may have to travel from the root to the deepest leaf node. The height of a skewed tree may become n and the time complexity of delete operation may become O(n)
 node* deleteNode(node* root,int key)
 {
 	if(root==NULL)
