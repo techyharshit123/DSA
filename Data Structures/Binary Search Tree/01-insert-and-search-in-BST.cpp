@@ -57,6 +57,9 @@ bool isPresent(node* root, int key)
 		return isPresent(root->right,key);
 
 }
+
+
+// print BST in inorder fashion
 void printBSTinorder(node * root)
 {
 	if(root==NULL)
