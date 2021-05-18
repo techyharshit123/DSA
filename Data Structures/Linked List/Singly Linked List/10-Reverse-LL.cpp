@@ -2,6 +2,7 @@
  
 #include "bits/stdc++.h"
 using namespace std;
+typedef uintptr_t ut;
 
 class node
 {
@@ -32,6 +33,7 @@ void insertAtHead(node *&head,int d)
 }
 
 ////////////////////////////////////////*****USING ITERATION*****///////////////////////////////////////
+// using 3 pointer
 node* reverseList(node *head)
 {
 	node *prev=NULL;
@@ -46,6 +48,22 @@ node* reverseList(node *head)
     }
     curr->next=prev;
     return curr;
+}
+
+//using 2 pointers
+//The idea is to use XOR to swap pointers. 
+node* reverseLL(node* head)
+{
+	node* prev=NULL;
+	node* curr=head;
+
+	while(curr!=NULL)
+	{
+		curr = (node*)((ut)prev ^ (ut)curr ^ (ut)(curr->next) ^ (ut)(curr->next = prev) ^ (ut)(prev = curr));
+	}
+
+	head=prev;
+	return head;
 }
 
 ////////////////////////////////////////*****USING Recursion*****///////////////////////////////////////
@@ -103,6 +121,6 @@ int main()
 	insertAtHead(head,1);
 	printList(head);
 
-	node *ans=reverseList(head);
+	node *ans=reverseLL(head);
 	printList(ans);
 }
