@@ -3,7 +3,7 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-//O(1) solution    we can easily write a O(n^2) solution using two nested loops
+//O(n) solution    we can easily write a O(n^2) solution using two nested loops
 std::vector<int> getSpan(std::vector<int> a,int n)
 {	
  	reverse(a.begin(),a.end());
