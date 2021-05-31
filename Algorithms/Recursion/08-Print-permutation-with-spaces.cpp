@@ -25,6 +25,7 @@ void solve(string input,string output)
     
     input.erase(input.begin());
     
+    //solving for further 2 recursive nodes
     solve(input,output1);
     solve(input,output2);
     return;
