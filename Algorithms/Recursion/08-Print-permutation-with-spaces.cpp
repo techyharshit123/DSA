@@ -19,8 +19,8 @@ void solve(string input,string output)
     string output1=output;
     string output2=output;
     
-    output1.push_back(input[0]);
-    output2.push_back(' ');
+    output1.push_back(input[0]);// bina space k push krdo ---->Decision1
+    output2.push_back(' '); //Space k saath push krdo ----->Decision2
     output2.push_back(input[0]);
     
     input.erase(input.begin());
