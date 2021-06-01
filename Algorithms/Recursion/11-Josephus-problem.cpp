@@ -25,6 +25,7 @@ int main()
 {
     int n,k;
     cin>>n>>k;
+    // k is number of person to be skipped
     vector<int>v;
     for(int i=1;i<n+1;i++)
         v.push_back(i);
