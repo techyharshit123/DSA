@@ -3,6 +3,7 @@ using namespace std;
 
 //*********************METHOD-1**************//
 // Using recursion
+// TC = Exponential
 long long int countrecursive( int S[], int m, int n )
 {
 	if (n == 0)
@@ -25,6 +26,7 @@ long long int countrecursive( int S[], int m, int n )
 
 //*********************METHOD-2**************//
 //recursion with memoization
+// TC = O(m*n)
 long long int ans(int S[], int m, int n , long long int dp[][1001])
 {
 	if (n == 0)
@@ -64,7 +66,7 @@ long long int counttopdown( int S[], int m, int n )
 
 //*********************METHOD-1**************//
 // Using bottom up approach
-
+// TC = O(m*n)
 long long int countbottomup( int S[], int m, int n )
 {
 	long long int dp[1001][1001];
