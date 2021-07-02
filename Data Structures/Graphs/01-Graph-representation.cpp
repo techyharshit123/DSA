@@ -1,6 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+
+void printGraph(vector<int> adj[], int V) //V is number of vertices
+{
+	for (int v = 0; v < V; ++v)
+	{
+		cout << "\n Adjacency list of vertex "
+		     << v << "\n head ";
+		for (auto x : adj[v])
+			cout << "-> " << x;
+		printf("\n");
+	}
+}
+
 // *******************************************ADJACENCY LIST*****************************
 // Undirected graph
 int main()
