@@ -29,7 +29,7 @@ public:
 	{
 		node *new_node=new node(data);
 
-		new_node->next=head;
+		new_node->next=head; //we are adding new nodes at head so as to make it O(1) operation
 		head=new_node;
 		sz++;
 	}

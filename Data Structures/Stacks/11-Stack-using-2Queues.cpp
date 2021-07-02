@@ -3,7 +3,9 @@
 #include "bits/stdc++.h"
 using namespace std;
 
+// METHOD-1 (making push operation costly)
 
+// METHOD-2 (making pop operation costly)
 class Stack
 {
 public:
