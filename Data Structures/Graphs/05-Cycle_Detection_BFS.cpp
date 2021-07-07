@@ -10,7 +10,7 @@ public:
 	Graph(int V)
 	{
 		vertices = V;
-		adj = new vector<int>[V];
+		adj = new vector<int>[V]; //always specify the size of array you are making otherwise it will give runtime error
 	}
 
 	void addEdge(int u, int v)
