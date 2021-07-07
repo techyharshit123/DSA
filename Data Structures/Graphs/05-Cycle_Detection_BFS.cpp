@@ -10,7 +10,7 @@ public:
 	Graph(int V)
 	{
 		vertices = V;
-		adj = new vector<int>;
+		adj = new vector<int>[V];
 	}
 
 	void addEdge(int u, int v)
