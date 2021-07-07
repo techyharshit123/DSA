@@ -7,5 +7,6 @@ class Graph
 {
 public:
 	unordered_map<T, list<pair<T, int>>>adj;
-	Graph() {}
+	Graph() {} // constructor
+	void addEdge()
 };

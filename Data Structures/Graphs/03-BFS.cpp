@@ -66,7 +66,7 @@ public:
 
 int main()
 {
-	Graph g(5);
+	Graph g(6);
 	g.addEdge(1, 2);
 	g.addEdge(2, 4);
 	g.addEdge(2, 3);

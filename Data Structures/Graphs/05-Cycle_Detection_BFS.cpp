@@ -39,20 +39,26 @@ public:
 			if (!visited[i])
 			{
 				queue<pair<int, int>>qu;
-				qu.push({adj[i][0], -1});
+				qu.push({i, -1});
 				visited[i] = 1;
-				for (auto neighbour : adj[i])
+				while (!qu.empty())
 				{
-					int parent = qu.front().first;
-					if (!visited[neighbour])
+					int node = qu.front().first;
+					int parent = qu.front().second;
+					qu.pop();
+
+					for (auto neighbour : adj[node])
 					{
-						visited[neighbour] = 1;
-						qu.push({neighbour, parent});
-					}
-					else
-					{
-						if (visited[neighbour] != parent)
-							return true;
+						if (!visited[neighbour])
+						{
+							visited[neighbour] = 1;
+							qu.push({neighbour, node});
+						}
+						else
+						{
+							if (neighbour != parent)
+								return true;
+						}
 					}
 				}
 			}
@@ -60,3 +66,18 @@ public:
 		return false;
 	}
 };
+
+int main()
+{
+	Graph g(5);
+	g.addEdge(0, 1);
+	g.addEdge(1, 3);
+	g.addEdge(1, 2);
+	g.addEdge(0, 2);
+	g.addEdge(2, 4);
+	g.addEdge(3, 4);
+	g.addEdge(2, 3);
+	g.printadj();
+
+	cout << g.isCycle() << endl;
+}
