@@ -30,20 +30,20 @@ public:
 		}
 	}
 
-	bool isCycleHelper(int src, vector<int> parent, vector<int>&visited)
+	bool isCycleHelper(int src, int parent, vector<int>&visited)
 	{
 		visited[src] = 1;
 		for (auto neighbour : adj[src])
 		{
 			if (!visited[neighbour])
 			{
-				parent[neighbour] = src;
+				parent = src;
 				if (isCycleHelper(neighbour, parent, visited))
 					return true;
 			}
 			else
 			{
-				if (neighbour != parent[src])
+				if (neighbour != parent)
 					return true;
 			}
 		}
@@ -52,7 +52,8 @@ public:
 	bool isCycle()
 	{
 		vector<int>visited(vertices, 0);
-		vector<int>parent(vertices, -1);
+		// vector<int>parent(vertices, -1); // to keep track of the parent of each and every vertices
+		int parent = -1;
 		for (int i = 0; i < vertices; i++)
 		{
 			if (!visited[i])
