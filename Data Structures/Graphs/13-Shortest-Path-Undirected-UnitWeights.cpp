@@ -41,7 +41,7 @@ public:
 		{
 			int front = qu.front();
 			qu.pop();
-			int dist = distance[front];
+			int dist = distance[front]; //it is the distance of the node front from the node src
 			for (auto neighbour : adj[front])
 			{
 				if (distance[neighbour] > dist + 1)
@@ -51,6 +51,11 @@ public:
 				}
 			}
 		}
+
+		// print the distance of all the nodes from the src node
+		for (auto x : distance)
+			cout << x << " ";
+		cout << endl;
 	}
 };
 
