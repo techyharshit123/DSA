@@ -30,39 +30,38 @@ public:
 		}
 	}
 
-	bool isCycleHelper(int src, vector<int> dfsvisited, vector<int>&visited)
+	void toposort(int src, stack<int>&st, vector<int>&visited)
 	{
 		visited[src] = 1;
-		dfsvisited[src] = 1;
 		for (auto neighbour : adj[src])
 		{
 			if (!visited[neighbour])
 			{
-				if (isCycleHelper(neighbour, dfsvisited, visited))
-					return true;
-			}
-			else
-			{
-				if (dfsvisited[neighbour])
-					return true;
+				toposort(neighbour, st, visited);
 			}
 		}
-		dfsvisited[src] = 0;
-		return false;
+		st.push(src);
 	}
-	bool isCycle()
+	vector<int> findToposort()
 	{
 		vector<int>visited(vertices, 0);
-		vector<int>dfsvisited(vertices, 0);
+		stack<int>st;
 		for (int i = 0; i < vertices; i++)
 		{
 			if (!visited[i])
 			{
-				if (isCycleHelper(i, dfsvisited, visited))
-					return true;
+				toposort(i, st, visited);
 			}
 		}
-		return false;
+
+		vector<int>topo;
+		while (st.size())
+		{
+			topo.push_back(st.top());
+			st.pop();
+		}
+
+		return topo;
 	}
 };
 
@@ -78,5 +77,5 @@ int main()
 	g.addEdge(2, 3);
 	g.printadj();
 
-	cout << g.isCycle() << endl;
+
 }
